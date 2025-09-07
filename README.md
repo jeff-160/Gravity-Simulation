@@ -7,5 +7,4 @@ Controls:
 - Scale body: Mouse scroll
 - Reposition body: Mouse drag
   
-
-Demo: https://jeff-160.github.io/Gravity-Simulation/
+Demo: https://jeff-160.github.io/Gravity-Simulation
