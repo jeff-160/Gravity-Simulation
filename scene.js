@@ -6,7 +6,7 @@ function loadScene() {
 
 // should be pretty stable i think
 function stableOrbit() {
-    const M = 100;
+    const M = 50;
     const m = 5;
 
     const radii = [10, 20];

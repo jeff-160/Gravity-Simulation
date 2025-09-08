@@ -1,5 +1,5 @@
-let ENGINE, SCENE, CAMERA, SCREEN
-let ENTITIES = []
+let ENGINE, SCENE, CAMERA, SCREEN;
+let ENTITIES = [];
 const SYSTEM = new System(1);
 
 window.onload = () => {
@@ -17,9 +17,10 @@ function loadComponents() {
 
     SCENE = new BABYLON.Scene(ENGINE);
     SCENE.clearColor = new BABYLON.Color3.Black();
+
+    // some optimisations
     SCENE.autoClearDepthAndStencil = false;
     SCENE.blockMaterialDirtyMechanism = true;
-
     
     CAMERA = new BABYLON.FreeCamera("", new BABYLON.Vector3(0, 0, -20), SCENE);
     
@@ -36,7 +37,7 @@ function loadComponents() {
 
     const light = new BABYLON.HemisphericLight("", CAMERA.position, SCENE);
 
-    addEvents()
+    addEvents();
 
     ENGINE.runRenderLoop(gameLoop);
 }
@@ -56,7 +57,7 @@ function gameLoop() {
 const FPS = {
     count: 1,
     times: []
-}
+};
 
 function updateFPS(timestamp) {
     while (FPS.times.length > 0 && FPS.times[0] <= timestamp - 1000) {

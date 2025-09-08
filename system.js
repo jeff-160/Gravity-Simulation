@@ -58,6 +58,8 @@ class System {
 
         plane.material = material;
 
+        plane.position.y = -0.5;
+
         this.gravity_grid = plane;
     }
 
@@ -75,9 +77,9 @@ class System {
             let phi = 0;
             
             for (const planet of this.planets) {
-                const epsilon = 10; // round the bottom of the well
+                const epsilon = 7; // round the bottom of the well
 
-                const r = Math.sqrt((x - planet.position.x) ** 2 + planet.position.y ** 2 + (z - planet.position.z) ** 2 + epsilon ** 2)
+                const r = Math.sqrt((x - planet.position.x) ** 2 + (this.gravity_grid.position.y - planet.position.y) ** 2 + (z - planet.position.z) ** 2 + epsilon ** 2)
                 
                 phi += (-this.G * planet.mass) / Math.max(r, 0.01);
             }
